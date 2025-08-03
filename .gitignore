@@ -36,3 +36,4 @@ deps/**/user.toml
 
 # Streaming EventTrace
 *.etli
+/farm_env_py310
