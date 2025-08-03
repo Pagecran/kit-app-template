@@ -106,7 +106,7 @@ command = 'C:\\chemin\\vers\\kit\\kit.exe'
 
 args = [
     "C:\\chemin\\vers\\apps\\votre_app.kit",
-    "--enable", "omni.services.render"
+    "--enable omni.services.render"
 ]
 
 task_function = "render.run"
@@ -217,7 +217,7 @@ $var = [System.Environment]::GetEnvironmentVariable('PATH','USER')
 ```toml
 args = [
     "chemin\\vers\\app.kit",
-    "--enable", "omni.services.render",
+    "--enable omni.services.render",
     "--no-window",
     "--/app/file/ignoreUnsavedOnExit=true",
     "--/app/hangDetector/enabled=false",
