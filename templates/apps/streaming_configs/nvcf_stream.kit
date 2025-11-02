@@ -9,19 +9,23 @@
 # its affiliates is strictly prohibited.
 
 [package]
-title = "{{ application_display_name }} Streaming"
+title = "{{ application_display_name }} NVCF Streaming"
 version = "{{ version }}"
-description = "Configuration for streaming deployments of {{ application_display_name }}"
-keywords = ["experience", "app", "dev", "streaming"]
-template_name = "omni.streaming_configuration"
+description = "Configuration for NVCF streaming deployments of {{ application_display_name }}"
+keywords = ["experience", "app", "dev", "streaming", "nvcf"]
+template_name = "omni.nvcf_streaming_configuration"
 
 [dependencies]
 "{{ application_name }}" = {}  # Application kit file
-"omni.kit.livestream.app" = {}  # Livestream extension
+"omni.services.livestream.session" = {}  # Livestream session extension
+"omni.ujitso.client" = {} # Caching
+"omni.cloud.open_stage" = {}  # Nucleus Connection
+
 
 [settings.app]
 fastShutdown = true
-name = "{{ application_display_name }} Streaming"  # Application Display Name
+name = "{{ application_display_name }} NVCF Streaming"  # Application Display Name
+ovc_deployment = true
 renderer.resolution.height = 1080
 renderer.resolution.width = 1920
 window.height = 1080
@@ -29,7 +33,12 @@ window.width = 1920
 
 [settings]
 rtx.post.aa.op = 3
+rtx.hydra.geometrystreaming.gpuBudgetMB = 64000
+rtx.hydra.geometrystreaming.instanceBudget = 14388608
 rtx.verifyDriverVersion.enabled = false
+rtx-transient.dlssg.enabled = true
+rtx-transient.scenedb.forceMaxTLASInstancesLimit = 15000000
+rtx-transient.scenedb.instanceBudget=1000000
 
 [settings.app.extensions]
 registryEnabled = true
@@ -47,3 +56,10 @@ folders.'++' = [  # Search paths for extensions.
 
 [settings.app.file]
 ignoreUnsavedOnExit = true
+
+[settings.exts."omni.kit.window.filepicker"]
+show_only_collections.2 = ""
+show_add_new_connection = false  # Do not allow connections to new servers when running on NVCF.
+
+[settings.exts."omni.kit.window.content_browser"]
+show_only_collections.2 = ""
