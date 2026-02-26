@@ -38,3 +38,5 @@ deps/**/user.toml
 *.etli
 
 /source
+/.zed
+/farm_env_py310
