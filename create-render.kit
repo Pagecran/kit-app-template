@@ -1,0 +1,19 @@
+[job.create-render]
+name = "create-render"
+job_type = "kit-service"
+command = "D:\\NVIDIA-Omniverse\\kit-app-template\\_build\\windows-x86_64\\release\\kit\\kit.exe"
+args = [ "D:\\NVIDIA-Omniverse\\kit-app-template\\_build\\windows-x86_64\\release\\apps\\pagerender.usd_compose.kit", "--/app/content/emptyStageOnStart=true", "--open", "D:/USD/Kitchen_set/Kitchen_set.usd", "--enable", "omni.renderer.rtx", "--enable", "omni.hydra.rtx", "--/log/level=DEBUG", "--/exts/omni.services.render/log_level=DEBUG", "--enable", "omni.services.core", "--/exts/omni.services.core/log_level=DEBUG", "--enable omni.services.render", "--/app/file/ignoreUnsavedOnExit=true", "--/app/extensions/excluded/0=omni.kit.window.privacy", "--/app/hangDetector/enabled=0", "--/app/asyncRendering=false", "--/rtx/materialDb/syncLoads=true", "--/omni.kit.plugin/syncUsdLoads=true", "--/rtx/hydra/materialSyncLoads=true", "--/rtx-transient/resourcemanager/texturestreaming/async=false", "--/rtx-transient/resourcemanager/enableTextureStreaming=false", "--/exts/omni.kit.window.viewport/blockingGetViewportDrawable=true", "--/rtx-transient/dlssg/enabled=false",]
+task_function = "render.run"
+log_to_stdout = true
+job_spec_path = ""
+headless = false
+active = true
+success_return_codes = [ 0,]
+working_directory = ""
+container = ""
+
+[job.create-render.env]
+
+[job.create-render.allowed_args]
+
+[job.create-render.capacity_requirements]
