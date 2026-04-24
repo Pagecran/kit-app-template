@@ -1,6 +1,9 @@
 ﻿# All folders starting with _ are local.
 _*/
 
+# All folders starting with . are local.
+.*/
+
 # Compiled python files.
 *.py[cod]
 
